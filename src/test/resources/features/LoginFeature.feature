@@ -7,4 +7,3 @@ Feature: Docuport Login Logout Feature
     And user enters password for client
     And user click login buttin
     Then user should be able to see home for client
- 
