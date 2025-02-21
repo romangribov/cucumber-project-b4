@@ -18,3 +18,4 @@ Feature: Google Search Functionality Title Verification
     Given user in on Google search page
     When user types "Nadir Shafiyev" in the google search box and clicks enter
     Then user should see "Nadir Shafiyev - Google Search" in the google title
+
