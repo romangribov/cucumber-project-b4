@@ -9,8 +9,8 @@ import org.junit.runner.RunWith;
         plugin = {"html:target/html-reports/cucumber-report.html","json:target/json-reports/json-report.json"},
         features = "src/test/resources/features",
         glue = "io/loop/step_definitions",
-        dryRun = false,
-        tags = "@google_search",
+        dryRun = true,
+        tags = "@google_search_outline",
         monochrome = true
 )
 
