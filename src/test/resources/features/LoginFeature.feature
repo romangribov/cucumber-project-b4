@@ -33,7 +33,7 @@ Feature: Docuport Login Logout Feature
     And user click login button
     Then user should bbe able to see the home for supervisor
 
-  @dataTableLogin
+  @dataTableLogin @smoke
   Scenario: Login as a client map practice
     When user enters credentials
       | username | b1g1_client@gmail.com |
