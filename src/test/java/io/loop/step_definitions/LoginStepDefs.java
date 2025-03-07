@@ -24,7 +24,6 @@ public class LoginStepDefs {
     @Given("user is on Docuport login page")
     public void user_is_on_docuport_login_page() {
         Driver.getDriver().get(ConfigurationReader.getProperties("docuportBETA"));
-        BrowserUtils.takeScreenshot();
         LOG.info("user is on docuport login page");
     }
 
@@ -33,27 +32,24 @@ public class LoginStepDefs {
         BrowserUtils.waitForClickable(loginPage.loginButton, DocuportConstants.EXTRA_LARGE);
         assertTrue("Login button is NOT displayed", loginPage.loginButton.isDisplayed());
         loginPage.usernameInput.sendKeys(DocuportConstants.USERNAME_CLIENT);
-        BrowserUtils.takeScreenshot();
         LOG.info("user enters username");
     }
 
     @When("user enters password for client")
     public void user_enters_password_for_client() {
         loginPage.passwordInput.sendKeys(DocuportConstants.PASSWORD);
-        BrowserUtils.takeScreenshot();
         LOG.info("user enters password");
     }
 
     @When("user click login button")
     public void user_click_login_button() {
         loginPage.loginButton.click();
-        BrowserUtils.takeScreenshot();
         LOG.info("user clicks login button");
     }
 
     @Then("user should be able to see the home for client")
     public void user_should_be_able_to_see_the_home_for_client() {
-        BrowserUtils.takeScreenshot();
+
         assertTrue(loginPage.continueButton.isDisplayed());
     }
 
