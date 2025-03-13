@@ -15,7 +15,8 @@ public class Driver {
     Creating the private constructor so this class's object is not reachable from outside
      */
 
-    private Driver(){}
+    private Driver() {
+    }
 
     /*
     making driver instance private
@@ -24,7 +25,7 @@ public class Driver {
 
     // private static WebDriver driver;
     // implement threadLocal ro achieve multi thread locally
-    private static InheritableThreadLocal <WebDriver> driverPool = new InheritableThreadLocal<>();
+    private static InheritableThreadLocal<WebDriver> driverPool = new InheritableThreadLocal<>();
 
     /*
     reusable method that will return the same driver instance everytime called
@@ -32,12 +33,14 @@ public class Driver {
 
     /**
      * singleton pattern
+     *
      * @return
      */
-    public static WebDriver getDriver(){
-        if(driverPool.get()==null){
+    public static WebDriver getDriver() {
+        if (driverPool.get() == null) {
             String browserType = ConfigurationReader.getProperties("browser");
-            switch (browserType.toLowerCase()){
+            long timeout = Long.parseLong(ConfigurationReader.getProperties("timeouts"));
+            switch (browserType.toLowerCase()) {
                 case "chrome":
                     driverPool.set(new ChromeDriver());
                     driverPool.get().manage().window().maximize();
@@ -53,6 +56,7 @@ public class Driver {
                 case "safari":
                     driverPool.set(new SafariDriver());
                     driverPool.get().manage().window().maximize();
+             //       driverPool.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(ConfigurationReader.getProperties("browser");
                     driverPool.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
                     break;
 
@@ -72,10 +76,11 @@ public class Driver {
 
     /**
      * closing driver
+     *
      * @author nsh
      */
-    public static void closeDriver(){
-        if(driverPool.get()!=null){
+    public static void closeDriver() {
+        if (driverPool.get() != null) {
             driverPool.get().quit();
             //driver=null;
             driverPool.remove();

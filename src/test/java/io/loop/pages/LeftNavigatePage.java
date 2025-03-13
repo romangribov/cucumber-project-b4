@@ -33,7 +33,7 @@ public class LeftNavigatePage {
 
     public void clickButton(String button){
         switch (button.toLowerCase().trim()){
-            case "received docs":
+            case "received doc":
                 BrowserUtils.waitForClickable(receivedDocsButton, 10).click();
                 break;
             case "home":
@@ -50,6 +50,10 @@ public class LeftNavigatePage {
 
             case "terms and conditions":
                 BrowserUtils.waitForClickable(termsAndConditionsButton, 10).click();
+                break;
+
+            case "my uploads":
+                BrowserUtils.waitForClickable(myUploads, 10).click();
                 break;
 
             default: throw new IllegalArgumentException("Not such a button: " + button);
