@@ -1,2 +1,6 @@
-02.03.2025 22:40:50 INFO  Hook:22 - .......................START AUTOMATION......................LOOPCAMP
-02.03.2025 22:40:50 INFO  Hook:32 - .......................END AUTOMATION........................LOOPCAMP
+14.03.2025 03:53:06 INFO  SampleDocuportStepDefs:41 - login - was successfully clicked
+14.03.2025 03:53:06 INFO  ClientStepDefs:39 - Choose account - is displayed
+14.03.2025 03:53:07 INFO  SampleDocuportStepDefs:41 - continue - was successfully clicked
+14.03.2025 03:53:07 INFO  SampleDocuportStepDefs:45 - home - was successfully clicked
+14.03.2025 03:53:07 INFO  SampleDocuportStepDefs:45 - invitations - was successfully clicked
+14.03.2025 03:53:07 INFO  Hook:32 - .......................END AUTOMATION........................LOOPCAMP
